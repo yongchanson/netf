@@ -25,9 +25,7 @@ function addpopular(data) {
     popluar.innerHTML += ` 
     <div class="movie">
         <img src="${poster_path? IMG_URL+poster_path: "img/noimage.png" }" alt="${title}" onclick="location.href = '/${movie.id}'">
-        <h3>${title}</h3>
-        <span>평점 : <span class="${vote_average}">${vote_average}</span> / 10</span>
-        <br><span> 개봉일자 : ${release_date} </span>
+        <h3 class="title">${title}</h3>
     </div>
     `;
 
