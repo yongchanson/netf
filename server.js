@@ -15,6 +15,12 @@ app.get('/:id', (req, res) => {
     res.sendFile(path.join(initial_path, "detail.html"));
 })
 
+app.get('/person/:id', (req, res) => {
+    res.sendFile(path.join(initial_path, "person.html"));
+})
+
+
+
 app.use((req, res) => {
     res.json("404 Not Found!");
 })

@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    position: relative;
+    background: #141414;
+    /* font-family: 'roboto', sans-serif; */
+}
+/* 네비 */
+.logo{
+    height:50%;
+    margin : 10px;
+    width:150px;
+}
+
+.navi{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    background: #141414;
+    padding: 0 2.5vw;
+    /* display: flex; */
+    align-items: center;
+}
+
+.navigation{
+    display: flex;
+    align-items: center;
+    float: right;
+}
+.navigation button{
+    /* background: #141414; */
+    background-color:transparent;
+    color : white;
+    margin: 10px;
+    height : 50px; 
+    width : 50px;
+    top : 20px;
+    border: none;
+    outline: none;
+}
+
+/* person */
+

@@ -33,6 +33,7 @@ const setupMovieInfo = (data) => {
     backdrop.style.backgroundImage = `url(${original_img_url}${data.backdrop_path})`;
 }
 
+// 출연배우
 fetch(`${movie_detail_http}${movie_id}/credits?` + API_KEY)
 .then(res => res.json())
 .then(data => {
@@ -40,11 +41,12 @@ fetch(`${movie_detail_http}${movie_id}/credits?` + API_KEY)
 
     cast.innerHTML += "<span>출연: </span>"
     for(let i = 0; i < 3; i++){
-        cast.innerHTML +=`<div class="actors">${data.cast[i].name}` + formatString(i, 4);
+        cast.innerHTML +=`<div class="actors" onclick="location.href ='/person/${data.cast[i].id}'">${data.cast[i].name}` + formatString(i, 4);
     } 
     cast.innerHTML += "더보기"
 })    
 
+//비슷한 컨텐츠
 fetch(`${movie_detail_http}${movie_id}/recommendations?` + API_KEY)
 .then(res => res.json())
 .then(data => {
@@ -59,12 +61,13 @@ fetch(`${movie_detail_http}${movie_id}/recommendations?` + API_KEY)
             <img src="${IMG_URL}${data.results[i].backdrop_path}">
             <p class="title">${data.results[i].title}</p>
             <p class="release_date">${data.results[i].release_date}</p>
-            <p class="overview">${data.results[i].overview.substring(0, 50)} ...</p>
+            <p class="overview">${data.results[i].overview.substring(0, 70)} ...</p>
         </div>
         `;
     }
 })
 
+//예고편
 fetch(`${movie_detail_http}${movie_id}/videos?`+ API_KEY)
 .then(res => res.json())
 .then(data => {
