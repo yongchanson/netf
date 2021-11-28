@@ -41,13 +41,13 @@ fetch(`${movie_detail_http}${movie_id}/credits?` + API_KEY)
 
     cast.innerHTML += "<span>출연: </span>"
     for(let i = 0; i < 3; i++){
-        cast.innerHTML +=`<div class="actors" onclick="location.href ='/person/${data.cast[i].id}'">${data.cast[i].name}` + formatString(i, 4);
+        cast.innerHTML +=`<div class="actors" onclick="location.href ='/${data.cast[i].id}person'">${data.cast[i].name}` + formatString(i, 4);
     } 
     cast.innerHTML += "더보기"
 })    
 
 //비슷한 컨텐츠
-fetch(`${movie_detail_http}${movie_id}/recommendations?` + API_KEY)
+fetch(`${movie_detail_http}${movie_id}/similar?` + API_KEY)
 .then(res => res.json())
 .then(data => {
     const similar = document.querySelector('.similar');
@@ -64,6 +64,7 @@ fetch(`${movie_detail_http}${movie_id}/recommendations?` + API_KEY)
             <p class="overview">${data.results[i].overview.substring(0, 70)} ...</p>
         </div>
         `;
+
     }
 })
 
