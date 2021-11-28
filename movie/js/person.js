@@ -20,5 +20,3 @@ fetch(`${BASE_URL}/person/${person_id}?` + API_KEY)
 .then(data => {
     actorname.innerHTML = data.name;
 })
-
-test
