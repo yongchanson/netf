@@ -14,3 +14,8 @@ let moviedetail = movie_detail_http + movie_id + "?" +API_KEY;
 // 사람들
 // let person_id = location.pathname.substring(-6, 4);
 let person_id = location.pathname.split('p')[0];
+
+
+let genres_list_http = "https://api.themoviedb.org/3/genre/movie/list?";
+
+let movie_discover = `https://api.themoviedb.org/3/discover/movie?`;
